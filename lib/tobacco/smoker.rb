@@ -12,6 +12,8 @@ module Tobacco
       self.content  = content
 
       Tobacco::Callback.instance(consumer)
+
+      generate_file_paths
     end
 
     def generate_file_paths
@@ -45,7 +47,7 @@ module Tobacco
         Tobacco::Callback.instance.notify(:on_success, content)
 
       rescue => e
-        Tobacco.log("ErrorWriting: #{filepath}")
+        Tobacco.log("ErrorWriting: #{filepath}\nError: #{e}")
 
         error = error_object('Error Writing', e)
         Tobacco::Callback.instance.notify(:on_write_error, error)

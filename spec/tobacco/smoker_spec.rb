@@ -85,7 +85,7 @@ describe Tobacco::Smoker do
     it 'sets the file_path_generator' do
       Tobacco::Roller.should_receive(:new).with(consumer)
 
-      subject.generate_file_paths
+      Tobacco::Smoker.new(consumer)
     end
   end
 end
