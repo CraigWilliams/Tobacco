@@ -1,3 +1,5 @@
+require 'fileutils'
+
 module Tobacco
   class Exhaler
     attr_accessor :content, :filepath
@@ -38,6 +40,7 @@ module Tobacco
     end
 
     def safety_net
+      Tobacco.log(filepath)
       @safety_net ||= Tobacco::SafetyNet.new(filepath)
     end
   end

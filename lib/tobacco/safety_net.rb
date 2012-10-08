@@ -14,7 +14,9 @@ module Tobacco
     #         so it can be restored if necessary
     #
     def backup
-      FileUtils.mv(@filepath, destination)
+      if File.exists? @filepath
+        FileUtils.mv(@filepath, destination)
+      end
     end
 
     # Public: Restores the original file in
@@ -22,13 +24,17 @@ module Tobacco
     #         writing the new content
     #
     def restore
-      FileUtils.mv(destination, @filepath)
+      if File.exists? destination
+        FileUtils.mv(destination, @filepath)
+      end
     end
 
     # Public: Destroys the backup file
     #
     def destroy
-      FileUtils.rm(destination)
+      if File.exists? destination
+        FileUtils.rm(destination)
+      end
     end
 
     # Public: Memoizes the destination path
