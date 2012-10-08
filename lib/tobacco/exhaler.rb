@@ -40,7 +40,6 @@ module Tobacco
     end
 
     def safety_net
-      Tobacco.log(filepath)
       @safety_net ||= Tobacco::SafetyNet.new(filepath)
     end
   end

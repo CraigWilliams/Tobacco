@@ -14,6 +14,8 @@ module Tobacco
     #         so it can be restored if necessary
     #
     def backup
+      Tobacco.log("Backup: #{@filepath} => #{destination}")
+
       if File.exists? @filepath
         FileUtils.mv(@filepath, destination)
       end
@@ -24,6 +26,8 @@ module Tobacco
     #         writing the new content
     #
     def restore
+      Tobacco.log("Restoring: #{destination} => #{@filepath}")
+
       if File.exists? destination
         FileUtils.mv(destination, @filepath)
       end
@@ -32,6 +36,8 @@ module Tobacco
     # Public: Destroys the backup file
     #
     def destroy
+      Tobacco.log("Destroying: #{destination}")
+
       if File.exists? destination
         FileUtils.rm(destination)
       end
