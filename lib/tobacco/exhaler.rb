@@ -10,7 +10,7 @@ module Tobacco
     end
 
     def write!
-     safety_net.backup
+     # safety_net.backup
 
      create_directory
      write_content_to_file
@@ -23,9 +23,9 @@ module Tobacco
     def write_content_to_file
       begin
         persist(content)
-        safety_net.destroy
+        # safety_net.destroy
       rescue => e
-        safety_net.restore
+        # safety_net.restore
         raise
       end
     end
