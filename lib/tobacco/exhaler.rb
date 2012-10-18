@@ -41,7 +41,7 @@ module Tobacco
         f.write file_content
       end
 
-      File.chmod(0644, filepath)
+      File.chmod(0755, filepath)
     end
 
     def safety_net
