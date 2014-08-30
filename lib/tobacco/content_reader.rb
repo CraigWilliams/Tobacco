@@ -15,8 +15,7 @@ module Tobacco
     end
 
     def modify_content
-      self.modified_content = \
-        Tobacco::Callback.instance.notify(:before_write, content)
+      self.modified_content = Tobacco::Callback.instance.notify(:before_write, content)
     end
 
     def read_content
@@ -28,7 +27,7 @@ module Tobacco
     # object that will be used to read the content from a url
     #
     def choose_reader
-      self.reader = \
+      self.reader =
         if @consumer.respond_to? Tobacco.content_method
           @consumer
         else

@@ -31,9 +31,10 @@ module Tobacco
   def self.log(msg)
     return unless logging
 
-    log_msg =  "\n*******************************************\n"
-    log_msg += "Tobacco::Log: #{msg}\n"
-    log_msg += "*******************************************\n"
+    nl      = "\n"
+    sep     = '*'*40
+    bread   = nl, sep, nl
+    log_msg = [bread, "Tobacco::Log: #{msg}", bread].join
 
     if defined? Rails
       Rails.logger.info(log_msg)

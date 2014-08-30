@@ -7,7 +7,7 @@ This procedure is mostly simple url reading and making directories and writing t
 
 ## Example
 
-At Factory Code Labs, we work on a system for which we must deploy static HTML files. [Mike Pack](http://github.com/MikePack) has written a concurrency gem named [Pipes](http://github.com/MikePack/Pipes) that masterfully handles all the stages the publishing system must perform.
+For use in projects that require static HTML to be generated. [Mike Pack](http://github.com/MikePack) has written a concurrency gem named [Pipes](http://github.com/MikePack/Pipes) that masterfully handles all the stages the publishing system must perform.
 
 Tobacco is meant to complement the Writer classes that utilize Pipes. With a few configuration settings and two or three methods added to a writer class, Tobacco will handle the rest.
 
@@ -313,11 +313,7 @@ Make a backup of the file before attempting a new write. If something goes wrong
 ## Credits
 
 
-![Factory Code Labs](http://i.imgur.com/yV4u1.png)
-
-Tobacco is maintained by [Factory Code Labs](http://www.factorycodelabs.com).
-
 ## License
 
-Tobacco is Copyright © 2012 Factory Code Labs. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
+Tobacco is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
 
